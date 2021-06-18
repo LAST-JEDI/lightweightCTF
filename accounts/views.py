@@ -140,7 +140,7 @@ def every_team(request, pk) :
 	try :
 		requested_team_details = models.Teams.objects.get(teamname=requested_team)
 		# request_teamusers_details = models.TeamUser.objects.filter(team=requested_team_details)
-		solved_team_challenges = ChallengesSolvedBy.objects.filter(user_name=requested_team)
+		solved_team_challenges = ChallengesSolvedBy.objects.filter(teamname=requested_team)
 		context['user_details'] = requested_team_details
 		context['solved_challenges'] = solved_team_challenges
 		return render(request, template_name, context)
